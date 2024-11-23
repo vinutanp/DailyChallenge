@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bar Animation</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+     .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 30px auto;
+    }
+    .container {
+      display: flex;
+       background-color: #000435;
+      justify-content: center;
+      align-items: flex-end;
+      height: 180px;
+      width: 600px;
+      padding:10px;
+      margin: 30px auto;
+    }
+
+    .bar {
+      width: 20%;
+      height: 100%;
+      transition: height 1s ease-in-out;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-around;
+      width: 600px;
+      margin-top: 10px;
+    }
+
+    button {
+      padding: 8px 25px;
+      font-size: 12px;
+      border: none;
+      cursor: pointer;
+    }
+
+    #start { background: #006600; color: white; }
+    #stop { background: red; color: white; }
+    #reset { background:#6600cc ; color: white; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+  <div class="container">
+    <div class="bar" style="background-color: #4a90e2;"></div>
+    <div class="bar" style="background-color: #ae56c0;"></div>
+    <div class="bar" style="background-color: #f55b92;"></div>
+    <div class="bar" style="background-color: #ff8a65;"></div>
+    <div class="bar" style="background-color: #ffc107;"></div>
+  </div>
+  <div class="buttons">
+    <button id="start">Start</button>
+    <button id="reset">Reset</button>
+    <button id="stop">Stop</button>
+    
+  </div>
+  </div>
+  <script>
+    const bars = document.querySelectorAll('.bar');
+    let intervalId;
+
+  document.getElementById('start').onclick = () => {
+      if (intervalId) return; 
+      intervalId = setInterval(() => {
+        bars.forEach(bar => {
+          bar.style.height =Math.random() * 100 + '%'; 
+        });
+      }, 600); 
+    };
+
+    document.getElementById('stop').onclick = () => {
+      clearInterval(intervalId);
+      intervalId = null;
+    };
+
+    document.getElementById('reset').onclick = () => {
+      clearInterval(intervalId);
+      intervalId = null;
+      bars.forEach(bar => bar.style.height = '100%'); 
+    };
+  </script>
+</body>
+</html>
