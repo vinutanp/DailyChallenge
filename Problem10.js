@@ -41,19 +41,46 @@
 //Q13: Write a funciton that takes a string as input and returns the count of vowels in that string.
 //Consider both lowecse and uppercase.
 
-const countVowels=(str)=>{
-    str=str.toLowerCase();
-let arr=str.split('');
-let count=0;
-    const vowels=['a','e','i','o','u'];
+// const countVowels=(str)=>{
+//     str=str.toLowerCase();
+// let arr=str.split('');
+// let count=0;
+//     const vowels=['a','e','i','o','u'];
 
-    for(let i=0;i< arr.length-1;i++){
-       if(vowels.includes(arr[i])) {
-        count++;
-       }
+//     for(let i=0;i< arr.length-1;i++){
+//        if(vowels.includes(arr[i])) {
+//         count++;
+//        }
        
-    }
-    return count;
+//     }
+//     return count;
+
+// }
+// console.log(countVowels("hello world"))
+
+//q14: Write a function called isPowerOfTwo that takes an integer num as
+//input and returns true if num is a power of two, and false otherwise.
+
+const powerOfTwo=(n)=>{//8
+
+//    let res=false;
+//    for(let i=0;i<num;i++){
+//     if(2**i === num){
+//         res=true;
+//     }
+//    }
+//    return res
+
+if(n===0) return false;
+
+while(n!=1){
+    n=n/2;
+    if(n%2!=0 && n!=1) return false;
+}
+return true;
+
 
 }
-console.log(countVowels("hello world"))
+
+console.log(powerOfTwo(64));
+console.log(powerOfTwo(9));
