@@ -61,7 +61,7 @@
 //q14: Write a function called isPowerOfTwo that takes an integer num as
 //input and returns true if num is a power of two, and false otherwise.
 
-const powerOfTwo=(n)=>{//8
+// const powerOfTwo=(n)=>{//8
 
 //    let res=false;
 //    for(let i=0;i<num;i++){
@@ -71,16 +71,25 @@ const powerOfTwo=(n)=>{//8
 //    }
 //    return res
 
-if(n===0) return false;
+// if(n===0) return false;
 
-while(n!=1){
-    n=n/2;
-    if(n%2!=0 && n!=1) return false;
+// while(n!=1){
+//     n=n/2;
+//     if(n%2!=0 && n!=1) return false;
+// }
+// return true;
+
+
+// }
+
+// console.log(powerOfTwo(64));
+// console.log(powerOfTwo(9));
+
+//q16: find the minimum value in an array
+
+const findmin=(arr)=>{
+   arr.sort((a, b) => a - b);
+   return arr[0]
 }
-return true;
 
-
-}
-
-console.log(powerOfTwo(64));
-console.log(powerOfTwo(9));
+console.log(findmin([1,15,13]))
