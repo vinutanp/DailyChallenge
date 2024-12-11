@@ -87,9 +87,24 @@
 
 //q16: find the minimum value in an array
 
-const findmin=(arr)=>{
-   arr.sort((a, b) => a - b);
-   return arr[0]
-}
+// const findmin=(arr)=>{
+//    arr.sort((a, b) => a - b);
+//    return arr[0]
+// }
 
-console.log(findmin([1,15,13]))
+// console.log(findmin([1,15,13]))
+
+//q17: write the function to convert a string to camelCase and snakecase
+ const convertToCamelCase=(str)=>{
+    str=str.trim().split(" ");
+    str=str.map((curlem,idx)=>{
+        if(idx===0){
+            return curlem
+        }else{
+          return  curlem.charAt(0).toUpperCase()+ curlem.substring(1).toLowerCase();
+        }
+    })
+    return str.join("")
+ }
+
+ console.log(convertToCamelCase("vinuta nagappa poojari"))
