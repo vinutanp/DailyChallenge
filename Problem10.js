@@ -95,16 +95,31 @@
 // console.log(findmin([1,15,13]))
 
 //q17: write the function to convert a string to camelCase and snakecase
- const convertToCamelCase=(str)=>{
-    str=str.trim().split(" ");
-    str=str.map((curlem,idx)=>{
-        if(idx===0){
-            return curlem
-        }else{
-          return  curlem.charAt(0).toUpperCase()+ curlem.substring(1).toLowerCase();
-        }
-    })
-    return str.join("")
- }
+//  const convertToCamelCase=(str)=>{
+//     str=str.trim().split(" ");
+//     str=str.map((curlem,idx)=>{
+//         if(idx===0){
+//             return curlem
+//         }else{
+//           return  curlem.charAt(0).toUpperCase()+ curlem.substring(1).toLowerCase();
+//         }
+//     })
+//     return str.join("")
+//  }
 
- console.log(convertToCamelCase("vinuta nagappa poojari"))
+//  console.log(convertToCamelCase("vinuta nagappa poojari"))
+
+//q18 ;write a function to check if the character is lowercase or uppercase
+
+const isUppercase=(str)=>{
+  if(str.length>1){
+    return "should be one character"
+  }
+
+  if(str.charCodeAt(0)>=65 && str.charCodeAt(0)<=90){
+    return true
+  }
+  return false
+}
+
+console.log(isUppercase("a"))
