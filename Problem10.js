@@ -111,15 +111,26 @@
 
 //q18 ;write a function to check if the character is lowercase or uppercase
 
-const isUppercase=(str)=>{
-  if(str.length>1){
-    return "should be one character"
-  }
+// const isUppercase=(str)=>{
+//   if(str.length>1){
+//     return "should be one character"
+//   }
 
-  if(str.charCodeAt(0)>=65 && str.charCodeAt(0)<=90){
-    return true
-  }
-  return false
+//   if(str.charCodeAt(0)>=65 && str.charCodeAt(0)<=90){
+//     return true
+//   }
+//   return false
+// }
+
+// console.log(isUppercase("a"))
+
+//q19 write a function to check if the given string starts with specific substring
+
+const startsWith=(str1, str2)=>{
+str1=str1.toLowerCase();
+str2=str2.toLowerCase();
+// return str1.startsWith(str2)
+
+return str1.slice(0, str2.length) == str2;
 }
-
-console.log(isUppercase("a"))
+console.log(startsWith("Hello world", "hello"));
