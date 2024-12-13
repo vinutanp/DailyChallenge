@@ -51,7 +51,7 @@
 //        if(vowels.includes(arr[i])) {
 //         count++;
 //        }
-       
+
 //     }
 //     return count;
 
@@ -126,11 +126,26 @@
 
 //q19 write a function to check if the given string starts with specific substring
 
-const startsWith=(str1, str2)=>{
-str1=str1.toLowerCase();
-str2=str2.toLowerCase();
-// return str1.startsWith(str2)
+// const startsWith=(str1, str2)=>{
+// str1=str1.toLowerCase();
+// str2=str2.toLowerCase();
+// // return str1.startsWith(str2)
 
-return str1.slice(0, str2.length) == str2;
+// return str1.slice(0, str2.length) == str2;
+// }
+// console.log(startsWith("Hello world", "hello"));
+
+//q20: write a function to reverse a string wihtout using any built-in methods or libraries.The 
+//function should take a string as input and return the reversed string.
+
+const reverseString = (str) => {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+
+        reversed += str[i];
+
+    }
+    return reversed
 }
-console.log(startsWith("Hello world", "hello"));
+
+console.log(reverseString("hello world"))
